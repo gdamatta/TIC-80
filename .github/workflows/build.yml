@@ -482,7 +482,7 @@ jobs:
 
       - name: Build
         run: |
-          sed -i 's/mSurfMode = true/mSurfMode = false/g' build/android/app/src/main/java/com/nesbox/tic80/MainActivity.java
+          find build/android -name "MainActivity.java" -exec sed -i 's/mSurfMode = true/mSurfMode = false/g' {} +
 
           cd build/android
           chmod +x gradlew
